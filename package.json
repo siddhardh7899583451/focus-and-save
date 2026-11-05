@@ -1,0 +1,22 @@
+{
+  "name": "focus-and-save",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first reader mode and bookmark manager Chrome extension.",
+  "scripts": {
+    "build": "esbuild src/content/content.js --bundle --format=iife --platform=browser --target=chrome120 --outfile=dist/reader.bundle.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "package:check": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "dompurify": "^3.2.6"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "jsdom": "^25.0.1",
+    "vitest": "^4.1.12"
+  }
+}

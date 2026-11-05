@@ -1,0 +1,28 @@
+#focus-reader-root {
+  position: fixed !important; inset: 0 !important; z-index: 2147483647 !important;
+  display: flex !important; flex-direction: column !important; background: #f8fafc !important;
+  color: #1e293b !important; font: 16px/1.5 system-ui, sans-serif !important;
+}
+#focus-reader-root * { box-sizing: border-box; }
+#focus-reader-root .reader-toolbar {
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;
+  padding:12px 18px; border-bottom:1px solid #cbd5e1; background:#fff; color:#0f172a;
+}
+#focus-reader-root .reader-brand, #focus-reader-root .reader-controls { display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+#focus-reader-root button, #focus-reader-root select {
+  border:1px solid #cbd5e1; border-radius:6px; background:#fff; color:#0f172a;
+  padding:7px 10px; font:inherit; cursor:pointer;
+}
+#focus-reader-root .reader-scroll { overflow:auto; padding:32px 20px 80px; font-size:18px; line-height:1.6; }
+#focus-reader-root .reader-article { max-width:720px; margin:0 auto; text-align:left; overflow-wrap:anywhere; }
+#focus-reader-root .reader-article h1 { font-size:2em; line-height:1.2; margin:0 0 12px; }
+#focus-reader-root .reader-source { color:#64748b; font-size:.8em; margin-bottom:28px; }
+#focus-reader-root .reader-article p { margin:0 0 24px; }
+#focus-reader-root .reader-article img { max-width:100%; height:auto; display:block; margin:24px auto; }
+#focus-reader-root .reader-article pre { overflow:auto; padding:14px; background:#e2e8f0; border-radius:8px; }
+#focus-reader-root[data-theme="dark"] { background:#171717 !important; color:#e5e5e5 !important; }
+#focus-reader-root[data-theme="dark"] .reader-toolbar { background:#262626; color:#f5f5f5; border-color:#404040; }
+#focus-reader-root[data-theme="dark"] button, #focus-reader-root[data-theme="dark"] select { background:#333; color:#f5f5f5; border-color:#555; }
+#focus-reader-root[data-theme="sepia"] { background:#f4ecd8 !important; color:#433422 !important; }
+#focus-reader-root[data-theme="sepia"] .reader-toolbar { background:#eadfc5; color:#433422; }
+@media(max-width:700px) { #focus-reader-root .reader-scroll { padding:20px 14px 50px; } }

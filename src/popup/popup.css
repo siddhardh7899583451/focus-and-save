@@ -1,0 +1,10 @@
+* { box-sizing:border-box; }
+body { margin:0; width:300px; font:14px/1.45 system-ui,sans-serif; color:#172033; background:#f8fafc; }
+.popup { padding:18px; display:grid; gap:10px; }
+h1 { font-size:19px; margin:0; color:#0284c7; }
+.subtitle { margin:-6px 0 6px; color:#64748b; }
+button { padding:10px 12px; border:1px solid #cbd5e1; border-radius:7px; background:#fff; cursor:pointer; text-align:left; }
+button:hover { background:#e0f2fe; }
+button.primary { background:#0284c7; color:#fff; border-color:#0284c7; }
+#status-message { margin:0; font-size:12px; }
+.hidden { display:none; }

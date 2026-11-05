@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+.vitest/
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.crx
+*.zip
+npm-debug.log*
+yarn-debug.log*
+package.json.backup
+package-lock.backup
+.env

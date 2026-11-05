@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus &amp; Save — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <h1>Focus &amp; Save</h1>
+      <p class="tagline">Your reading library</p>
+      <nav id="navigation">
+        <button class="nav-item active" data-view="all">All bookmarks</button>
+        <button class="nav-item" data-view="favorites">Favorites</button>
+        <button class="nav-item" data-view="unread">Unread</button>
+        <button class="nav-item" data-view="reading">Currently reading</button>
+        <button class="nav-item" data-view="finished">Finished</button>
+        <button class="nav-item" data-view="settings">Settings &amp; backup</button>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <input id="search-input" type="search" placeholder="Search title, URL, tags, notes…">
+        <select id="category-filter" aria-label="Filter category"><option value="">All categories</option></select>
+        <button id="add-category" class="secondary">+ Category</button>
+      </header>
+      <section id="bookmark-list" class="bookmark-grid" aria-live="polite"></section>
+      <section id="settings-view" class="settings hidden">
+        <h2>Settings &amp; local backup</h2>
+        <p>Bookmarks and preferences are stored using Chrome local extension storage.</p>
+        <div class="button-row">
+          <button id="export-json" class="primary">Export JSON backup</button>
+          <button id="import-json" class="secondary">Import JSON backup</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+        </div>
+        <p id="import-status" role="status"></p>
+      </section>
+    </main>
+  </div>
+  <dialog id="edit-dialog">
+    <form method="dialog" id="edit-form">
+      <h2>Edit bookmark</h2>
+      <label>Title<input id="edit-title" maxlength="1000" required></label>
+      <label>Category<select id="edit-category"></select></label>
+      <label>Tags (comma separated)<input id="edit-tags" placeholder="javascript, learning"></label>
+      <label>Notes<textarea id="edit-notes" rows="5" maxlength="10000"></textarea></label>
+      <label>Reading status<select id="edit-status"><option value="unread">Unread</option><option value="reading">Currently reading</option><option value="finished">Finished</option></select></label>
+      <label class="check"><input id="edit-favorite" type="checkbox"> Favorite</label>
+      <div class="button-row"><button value="cancel" class="secondary">Cancel</button><button id="edit-save" value="save" class="primary">Save changes</button></div>
+      <p id="edit-error" role="alert"></p>
+    </form>
+  </dialog>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
